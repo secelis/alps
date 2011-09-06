@@ -70,10 +70,11 @@ public:
   std::ostream& write(std::ostream& file);
   bool write(const char *fname);
 
+ protected:
+  std::vector<double> gene_vec_;
 
  private:
   int num_genes_;
-  std::vector<double> gene_vec_;
   std::vector<double> max_val_;
   std::vector<double> min_val_;
   std::vector<double> init_max_;

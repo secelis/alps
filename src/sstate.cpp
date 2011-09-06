@@ -95,7 +95,7 @@ AlpsSState :: ~AlpsSState()
 
 void AlpsSState :: set_pop_size(unsigned int size)
 {
-  cout << "alps_sstate :: set_pop_size(" << size << ")\n";
+  //cout << "alps_sstate :: set_pop_size(" << size << ")\n";
 
   vector<Individual*>::size_type old_size = pop_parents_.size();
 
@@ -196,7 +196,7 @@ void AlpsSState :: print_generation_stats()
 
   /*
   cout << "alps_gen :: print_generation_stats() - #evals:"
-       << num_evaluations_ << ":" << num_evaluations_evolve_ << "\n";
+       << num_evaluations_ << ":" << num_evaluations_evolve_ << endl;
   */
 
   for (int i=0; i<num_layers_; i++) {
@@ -253,7 +253,7 @@ void AlpsSState :: print_generation_stats()
 
 
   if (print_debug_info_) {
-    cout << "\n";
+    cout << endl;
   }
 
   int prec = cout.precision();
@@ -297,11 +297,11 @@ void AlpsSState :: print_generation_stats()
   */
   cout << " ";
   print_time();
-  cout << "\n";
+  cout << endl;
   cout.precision(prec);
 
   if (print_debug_info_) {
-    cout << "\n";
+    cout << endl;
   }
 }
 
@@ -554,7 +554,7 @@ void AlpsSState :: insert_evaluated(vector<double>& fitness,
   }
 
   if (print_debug_info_) {
-    cout << "Insert_Evaluated(" << index << ") - fitness=" << fitness[0] << "\n";
+    cout << "Insert_Evaluated(" << index << ") - fitness=" << fitness[0] << endl;
   }
 
   individ->set_fitness(is_maximizing_, fitness);
@@ -819,7 +819,7 @@ int AlpsSState :: stochastic_parent1(int index)
     if (print_debug_info_) {
       cout << "     stochastic_parent1() - push index:" << index << ", max_age:"
 	   << max_age << ", age: "
-	   << pop_parents_[index]->get_age(num_evaluations_, num_individs_) << "\n";
+	   << pop_parents_[index]->get_age(num_evaluations_, num_individs_) << endl;
     }
     tourn.push_back(index);
   }
@@ -1078,12 +1078,12 @@ void AlpsSState :: sort_elite(int lyr)
 	  cout_parent(elite_individs_[lyr][i-1]);
 	  cout << " is better then ";
 	  cout_parent(elite_individs_[lyr][i]);
-	  cout << "\n";
+	  cout << endl;
 
 	    /*
 	       << i-1 << ":" << pop_parents_[elite_individs_[lyr][i-1]]->get_fitness()
 	       << " is better than: "
-	       << i << ":" << pop_parents_[elite_individs_[lyr][i]]->get_fitness() << "\n";
+	       << i << ":" << pop_parents_[elite_individs_[lyr][i]]->get_fitness() << endl;
 	    */
 	}
 	break;
@@ -1093,11 +1093,11 @@ void AlpsSState :: sort_elite(int lyr)
 	cout_parent(elite_individs_[lyr][i-1]);
 	cout << " with ";
 	cout_parent(elite_individs_[lyr][i]);
-	cout << "\n";
+	cout << endl;
 	/*	  
 	     << i-1 << ":" << pop_parents_[elite_individs_[lyr][i-1]]->get_fitness()
 	     << " with: "
-	     << i << ":" << pop_parents_[elite_individs_[lyr][i]]->get_fitness() << "\n";
+	     << i << ":" << pop_parents_[elite_individs_[lyr][i]]->get_fitness() << endl;
 	*/
       }
       int tmp = elite_individs_[lyr][i-1];
@@ -1133,7 +1133,7 @@ void AlpsSState :: print_elite(int lyr)
     cout << " ";
     cout_parent(elite_individs_[lyr][i]);
   }
-  cout << "\n";
+  cout << endl;
 }
 
 
@@ -1368,12 +1368,12 @@ int AlpsSState :: get_next_individ(int& index, Individual*& individ)
   
   if (random_double() < prob_recomb_) {
     if (print_debug_info_) {
-      cout << "alps_ss :: get_next() - mutate:" << index << "\n";
+      cout << "alps_ss :: get_next() - mutate:" << index << endl;
     }
     individ = make_mutate(index);
   } else {
     if (print_debug_info_) {
-      cout << "alps_ss :: get_next() - recomb:" << index << "\n";
+      cout << "alps_ss :: get_next() - recomb:" << index << endl;
     }
     individ = make_recombine(index);
   }
@@ -1540,7 +1540,7 @@ void AlpsSState :: write_log_layers()
   }
 
   //  log_file_ << endl;
-  log_file_ << "\n";
+  log_file_ << endl;
 }
 
 

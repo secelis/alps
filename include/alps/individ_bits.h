@@ -5,7 +5,7 @@
 #ifndef INDIVID_BITS_HEADER_FILE
 #define INDIVID_BITS_HEADER_FILE
 
-#include "alps_individ.h"
+#include "alps/individ.h"
 
 
 namespace alps {

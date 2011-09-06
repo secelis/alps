@@ -2,7 +2,7 @@ AUTOMAKE_OPTIONS = foreign
 SUBDIRS = src examples support include/alps
 ACLOCAL_AMFLAGS = -I support/m4
 
-# include support/aminclude.am
+include support/doxygen.am
 
 # if DX_COND_man
 
@@ -14,11 +14,13 @@ ACLOCAL_AMFLAGS = -I support/m4
 
 # endif
 
-# doc: doxygen-doc
+doc: doxygen-doc
 
-# html-local: doxygen-doc
+html-local: doxygen-doc
 
 MOSTLYCLEANFILES = $(DX_CLEANFILES)
+
+
 
 EXTRA_DIST = README.txt LICENSE.txt $(DX_CONFIG) doc/api/html
 
